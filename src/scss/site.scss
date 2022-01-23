@@ -1,0 +1,38 @@
+@use 'globals';
+@use 'flex';
+
+$site-width: 200px;
+$site-height: 300px;
+
+.site-wrapper {
+  height: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.site {
+  & {
+    background: globals.$light-grey;
+    height: $site-height;
+    flex: 0 0 $site-width;
+  }
+
+  &-preview {
+    width: $site-width;
+    height: 100%;
+
+    img {
+      background: #7409d9;
+      width: 100%;
+    }
+
+    div {
+      margin-top: -7px;
+      width: $site-width;
+      height: $site-height - $site-width;
+
+      @include flex.centre();
+    }
+  }
+}

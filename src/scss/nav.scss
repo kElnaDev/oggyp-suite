@@ -1,0 +1,37 @@
+@use 'globals';
+@use 'flex';
+
+$nav-padding-vertical: 15px;
+$nav-padding-horizontal: 20px;
+
+nav {
+  & {
+    background: globals.$light;
+    border-bottom: 1px solid globals.$light-grey;
+    padding: $nav-padding-vertical $nav-padding-horizontal;
+    width: 100%;
+    height: globals.$nav-height;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    @include flex.space-between(row);
+  }
+
+  .title {
+    font: {
+      family: globals.$font-heading;
+      size: 25px;
+    }
+    color: globals.$dark;
+  }
+
+  a {
+    color: globals.$dark-grey;
+  }
+
+  img {
+    height: globals.$nav-height - $nav-padding-vertical*2;
+  }
+}

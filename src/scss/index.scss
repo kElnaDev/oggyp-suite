@@ -1,0 +1,75 @@
+@use "globals";
+@use 'flex';
+
+
+// NORMALISE
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font: {
+    family: globals.$font-main;
+    size: 20px;
+  }
+  color: black;
+}
+
+
+// BODY
+body {
+  background: globals.$light;
+  padding: globals.$nav-height 0 100px;
+}
+
+header {
+  & {
+    background: globals.$primary;
+    border-radius: 0 0 200px 200px;
+    padding: 100px 10vw;
+    width: 100%;
+    height: 750px;
+    @include flex.centre(row);
+  }
+
+  h1 {
+    width: 50%;
+    font-weight: 400;
+    font-size: 50px;
+    color: white;
+  }
+
+  img {
+    height: 100%;
+  }
+}
+
+section {
+  padding: 50px;
+  width: 100%;
+  height: auto;
+}
+
+
+// HEADINGS
+%heading {
+  font: {
+    family: globals.$font-heading;
+    weight: 700;
+  }
+}
+
+h1 {
+  @extend %heading;
+  font-size: 30px;
+}
+
+h2 {
+  @extend %heading;
+  font-size: 26px;
+}
+
+h3 {
+  @extend %heading;
+  font-size: 23px;
+}

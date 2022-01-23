@@ -36,6 +36,6 @@ listed in it.**
 
 ## See Also
 * The official OggyP Suite website: https://oggyp.com
-* The official OggyP Suite icon set: https://github.com/kElna/oggyp-suite-icons
+* The official OggyP Suite icon set: https://github.com/kElnaDev/oggyp-suite-icons
 * OggyP's GitHub: https://github.com/OggyP
 * dungcatcher's GitHub: https://github.com/dungcatcher

@@ -3,6 +3,7 @@
 
 $site-width: 200px;
 $site-height: 300px;
+$site-bdrs: 10px;
 
 .site-wrapper {
   height: auto;
@@ -14,17 +15,28 @@ $site-height: 300px;
 .site {
   & {
     background: globals.$light-grey;
+    outline: none;
+
+    border: none;
+    border-radius: $site-bdrs;
+    width: $site-width;
     height: $site-height;
     flex: 0 0 $site-width;
+
+    @include flex.centre();
   }
 
-  &-preview {
-    width: $site-width;
-    height: 100%;
+  &-summary {
+    flex-direction: column;
+
+    * {
+      transition: 250ms;
+    }
 
     img {
-      background: #7409d9;
-      width: 100%;
+      border-radius: $site-bdrs $site-bdrs 0 0;
+      width: $site-width;
+      height: $site-width;
     }
 
     div {
@@ -34,5 +46,32 @@ $site-height: 300px;
 
       @include flex.centre();
     }
+  }
+
+  &-info { display: none; }
+}
+
+.site:focus {
+  width: $site-width * 3;
+
+  .site-summary {
+    width: $site-width * 2.5;
+    display: flex;
+    flex-direction: row;
+
+    img {
+      border-radius: 0;
+      width: $site-width * 0.5;
+      height: $site-width * 0.5;
+    }
+
+    div {
+      margin-top: 0;
+    }
+  }
+
+  .site-info {
+    height: 100%;
+    display: block;
   }
 }
